@@ -1,0 +1,18 @@
+@api = http://localhost:3005/tasks
+
+POST {{api}}
+Content-Type: application/json
+
+{
+    "title": "I must create an App",
+    "description": "using react native"
+}
+
+###
+
+PUT {{api}}/6
+Content-Type: application/json
+
+{
+    "title": "I have to dinner"
+}
