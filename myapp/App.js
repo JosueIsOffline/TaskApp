@@ -12,20 +12,30 @@ const App = () => {
   return (
     <NavigationContainer>
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} 
-              options={({navigation}) => ({
+            <Stack.Screen name="HomeScreen" component={HomeScreen} 
+              options={({ navigation }) => ({
+                title: 'Tasks App',
                 headerStyle: {backgroundColor:'#222f3e'},
                 headerTitleStyle: { color: "#fff"},
                 headerRight: () => (
                     <TouchableOpacity 
                       onPress={() => navigation.navigate('TaskFormScreen')}
                     >
-                      <Text>New</Text>
+                      <Text style={{color: '#fff', marginRight: 20, fontSize: 15}}>New</Text>
                    </TouchableOpacity>
                   ),
                 })}
               />
-            <Stack.Screen name="Task Form" component={TaskFormScreen}/>
+            <Stack.Screen name="TaskFormScreen" component={TaskFormScreen}
+              options={{
+                title: 'Create a Task',
+                headerStyle: {
+                  backgroundColor: '#222f3e'
+                },
+                headerTitleStyle: { color: '#fff'},
+                headerTintColor: '#ffff'
+              }}
+            />
         </Stack.Navigator>
     </NavigationContainer>
   )
